@@ -8,6 +8,10 @@ angular.module('ngFlag', []).
   directive('flag', function() {
     return {
       restrict: 'E',
+      scope : {
+        country : '@country',
+        flagSize : '@flagSize'
+      },
       replace: true,
       template: '<span class="f{{ size }}"><span class="flag {{ country }}"></span></span>',
       scope: {
