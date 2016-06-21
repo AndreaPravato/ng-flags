@@ -19,7 +19,8 @@ angular.module('ngFlag', []).
         scope.size = 16;
 
         scope.$watch('country', function(value) {
-          scope.country = angular.lowercase(value);
+          if((value !== undefined) && (value.length <= 2)) scope.country = angular.lowercase(value);
+          else scope.country = value;
         });
 
         scope.$watch('size', function(value) {
